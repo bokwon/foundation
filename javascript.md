@@ -1,6 +1,6 @@
-#JavaScript
+# JavaScript
 
-###1. IIFE (Immediately Invoked Function Expression)
+### 1. IIFE (Immediately Invoked Function Expression)
 
 1) Definition:
 
@@ -40,7 +40,7 @@
 	 sampleLib.variable1;
 ``` 
 
-###2. Closure
+### 2. Closure
 
 1) Definition: 
 
@@ -107,7 +107,7 @@
 	// each of the two counters(closures), counter1 and counter2, maintains its independence from the other.
 ``` 
 
-###3. Understanding "this" 
+### 3. Understanding "this" 
 
 - [Watch and Code Cheatsheet for 'this'](https://github.com/gordonmzhu/cheatsheet-js)
 - In a regular function (or if you are not in a function at all), this points to window. In strict mode, 'this' will be 'undefined'.
@@ -116,7 +116,7 @@
 - When you explicitly set the value of this manually using bind, apply, or call, it is all up to you. (but this value will be only bound once)
 - In a callback function, apply the above rules methodically.
 
-###4. Event delegation
+### 4. Event delegation
 
 1) Definition: Event delegation is a technique involving adding event listeners to a parent element instead of adding them to the descendant elements. The listener will fire whenever the event is triggered on the descendant elements due to **event bubbling** the DOM (aka, **event propagation**). 
 
@@ -125,11 +125,11 @@
 - Memory footprint goes down because only one single handler is needed on the parent element, rather than having to attach event handlers on each descendant.
 - There is no need to unbind the handler from elements that are removed and to bind the event for new elements. (for [dynamic DOM add/remove manipulation](https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation)
 
-###5. Event bubbling
+### 5. Event bubbling
 
 When an event triggers on a DOM element, it will attempt to handle the event if there is a listener attached, then the event is bubbled up to its parent and the same thing happens. This bubbling occurs up the element's ancesters all the way to the document. Event bubbling is the mechanism behind event delegation.
 
-###6. Ajax
+### 6. Ajax
 
 1) Definition: Asynchronous JavaScript and XML. It is the use of the **XMLHttpRequest** object to communicate with servers. It can send and receive information in various formats, including JSON, XML, HTML, and text files. AJAX's most appealing characteristic is its **asynchronous** nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page.
 
@@ -186,7 +186,7 @@ When an event triggers on a DOM element, it will attempt to handle the event if 
 	})();
 ```
 
-###7. bind(), call(), and apply()
+### 7. bind(), call(), and apply()
 
 1) **bind()** : It creates a new function that, when called, has its **this** keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called. It is most useful for binding the value of **this** in methods of classes that you want to pass into other functions.  Think of the example of todomvc binding keyup event into create method. this.create.bind(this) as callback function.
 
@@ -208,24 +208,24 @@ When an event triggers on a DOM element, it will attempt to handle the event if 
 	runWithDebugger(sayFullName, ['bo', 'kwon']);
 ```
 
-###8. load vs DOMContentLoaded
+### 8. load vs DOMContentLoaded
 
 1) load: load event is fired when a resource and its dependent resources have finished loading. load should be used only to detect a fully-loaded page.
 
 2) DOMContentLoaded: DOMContentLoaded event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. 
 
 		
-###9. Is Semicolons needed after function declaration?
+### 9. Is Semicolons needed after function declaration?
 
 No need. Semicolons serve to separate statements from each other, and a Function declaration is not a statement. Function declarations are evaluated before the code enters into execution, **hoisting** is a common word used to explain this behaviour. However, semicolons are always recommended where you use Function expressions. 
 	
-###10. Examples of expressions that can be converted to false are:
+### 10. Examples of expressions that can be converted to false are:
 
 null, NaN, 0, empty string('' or ""), undefined
 
 **In Ruby, only false and nil are falsey, everything else is truthy**
 
-###11. Function-level scope
+### 11. Function-level scope
 
 ```javascript
 	var text = 'outside';
@@ -260,7 +260,7 @@ null, NaN, 0, empty string('' or ""), undefined
 
 5) Always declare your variables at the top of the scope.
 
-###12. ES6 Features
+### 12. ES6 Features
 
 1) **const** : Block-scoped. Read-only variable. Global constants do not become properties of the window object. The value of a constant can not change through re-assignment, and it can't be redeclared.
 
@@ -277,4 +277,4 @@ null, NaN, 0, empty string('' or ""), undefined
 	calcArea(5);
 ```
 		
-###13. Explain how prototypal inheritance works
+### 13. Explain how prototypal inheritance works
