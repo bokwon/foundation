@@ -276,5 +276,41 @@ null, NaN, 0, empty string('' or ""), undefined
 	console.log(pi); // 3.142
 	calcArea(5);
 ```
+
+### 13. toFixed()
+
+numObj.toFixed(digits) - returns a string representation of numObj. The number is rounded if necessary, and the fractional part is padded with zeros. If numObj is greater than 1e+21, this method simply calls Number.prototype.toString() and returns a string exponential notation.
+
+```javascript
+	var numObj = 12345.6789;
+	
+	numObj.toFixed(); // '12346'
+	numObj.toFixed(1); // '12345.7' rounding
+	numObj.toFixed(6); // '12345.678900' added zeros
+	
+	// However, toFixed() is not reliable for rounding up the decimal.
+	
+	var num = 0.615;
+	
+	num.toFixed(2); // "0.61" should return "0.62". It is because numbers are stored in computer as sum of powers of two.
+	
+	Math.pow(base, exponent) // returns the result of the base to the exponent power, that is base^exponent.	
+	Math.pow(2, 4); //16
+	
+	// How to solve this issue
+	// Open source 'AccoungingJS's approach
+	
+	Math.round(0.615*100) / 100; // 0.62
+	
+	//However, what about this?
+	1.005 * 100; // 100.49999999999999
+	
+	//Use scientific notation
+	1.005e2 // 1.005 * 10^2
+   //101 + 'e-2' => "101e-2" => Number("101e-2") => 1.01
+	
+```
+
+[How computer present numbers](bartaz.github.io/ieee754-visualization/)
 		
-### 13. Explain how prototypal inheritance works
+### 14. Explain how prototypal inheritance works
